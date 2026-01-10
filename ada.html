@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analysis and Design Algorithm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      ANALYSIS AND DESIGN ALGORITHM
+    </div>
+    <div class="date">on March 05, 2025</div>
+
+    <div class="section-title">ALGORITHM</div>
+
+    <div class="red-bar">W...</div>
+
+    <!-- PROGRAM 1 -->
+    <div class="program">
+      <h2>PROGRAM 1</h2>
+      <h3>Kruskal's algorithm</h3>
+
+      <textarea id="code1">
+#include<stdio.h>
+int ne=1,min_cost=0;
+void main()
+{
+  int n,i,j,min,a,b,u,v;
+  int cost[20][20],parent[20];
+  printf("Enter the no. of vertices:");
+}
+      </textarea><br>
+
+      <button class="copy-btn" onclick="copyText('code1')">Copy text</button>
+    </div>
+
+    <hr>
+
+    <!-- PROGRAM 2 -->
+    <div class="program">
+      <h2>PROGRAM 2</h2>
+      <h3>Prim's algorithm</h3>
+
+      <textarea id="code2">
+#include<stdio.h>
+int ne=1,min_cost=0;
+void main()
+{
+  int n,i,j,min,cost[20][20],u,v,source,visited[20];
+  printf("Enter the no. of vertices:");
+}
+      </textarea><br>
+
+      <button class="copy-btn" onclick="copyText('code2')">Copy text</button>
+    </div>
+
+    <hr>
+
+    <!-- PROGRAM 3a -->
+    <div class="program">
+      <h2>PROGRAM 3a</h2>
+      <h3>Floyd's algorithm</h3>
+
+      <textarea id="code3">
+#include<stdio.h>
+void floyd(int a[10][10],int n)
+{
+  int i,j,k;
+}
+      </textarea><br>
+
+      <button class="copy-btn" onclick="copyText('code3')">Copy text</button>
+    </div>
+
+    <hr>
+
+    <!-- PROGRAM 3b -->
+    <div class="program">
+      <h2>PROGRAM 3b</h2>
+      <h3>Warshall's algorithm</h3>
+
+      <textarea id="code4">
+#include<stdio.h>
+int a[10][10],p[10][10];
+void path()
+{
+}
+      </textarea><br>
+
+      <button class="copy-btn" onclick="copyText('code4')">Copy text</button>
+    </div>
+
+  </div>
+
+  <script>
+    function copyText(id) {
+      const textarea = document.getElementById(id);
+      textarea.select();
+      textarea.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Code copied!");
+    }
+  </script>
+
+</body>
+</html>

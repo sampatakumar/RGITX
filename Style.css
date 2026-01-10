@@ -1,0 +1,103 @@
+* {
+      box-sizing: border-box;
+      font-family: "Times New Roman", serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #ffffff;
+      border: 2px solid red;
+      padding-bottom: 30px;
+    }
+
+    /* Header */
+    .header {
+      background: black;
+      color: yellow;
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 20px;
+      margin: 15px;
+    }
+
+    .date {
+      text-align: center;
+      font-size: 12px;
+      margin-top: -10px;
+      color: #555;
+    }
+
+    /* Section title */
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 30px 20px 10px;
+      border-bottom: 2px solid #000;
+      padding-bottom: 5px;
+    }
+
+    .red-bar {
+      background: red;
+      height: 30px;
+      margin: 15px 0;
+      color: white;
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    /* Program blocks */
+    .program {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .program h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .program h3 {
+      margin: 5px 0 15px;
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    textarea {
+      width: 80%;
+      height: 160px;
+      resize: none;
+      padding: 10px;
+      font-family: monospace;
+      font-size: 13px;
+    }
+
+    .copy-btn {
+      margin-top: 8px;
+      background: #4f6df5;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .copy-btn:hover {
+      background: #394fd8;
+    }
+
+    hr {
+      width: 90%;
+      margin: 30px auto;
+    }
