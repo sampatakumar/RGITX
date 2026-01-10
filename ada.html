@@ -4,36 +4,48 @@
   <meta charset="UTF-8">
   <title>Analysis and Design Algorithm</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Global CSS -->
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
-   <div id="header"></div>
-  <script>
-  fetch("header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    });
-</script>
+<!-- ===== HEADER (GLOBAL) ===== -->
+<header class="navbar">
+  <h1 class="logo">RGITX</h1>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="labs/weblab/weblab.html">WEB LAB</a>
+    <a href="ada.html">ADA</a>
+  </nav>
 
 
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
 
-  <div class="container">
+
+<!-- ===== PAGE CONTENT ===== -->
+<main class="page-content">
+
+  <div class="lab-page">
 
     <div class="header">
       ANALYSIS AND DESIGN ALGORITHM
     </div>
-    <div class="date">on March 05, 2025</div>
 
-   
+    <div class="date">on March 05, 2025</div>
 
     <div class="red-bar"></div>
 
-    <!-- PROGRAM 1 -->
+    <!-- ================= PROGRAM 1 ================= -->
     <div class="program">
       <h2>PROGRAM 1</h2>
-      <h3>Kruskal's algorithm</h3>
+      <h3>Kruskal's Algorithm</h3>
 
       <textarea id="code1">
 #include<stdio.h>
@@ -46,15 +58,15 @@ void main()
 }
       </textarea><br>
 
-      <button class="copy-btn" onclick="copyText('code1')">Copy text</button>
+      <button class="copy-btn" onclick="copyText('code1', this)">Copy</button>
     </div>
 
     <hr>
 
-    <!-- PROGRAM 2 -->
+    <!-- ================= PROGRAM 2 ================= -->
     <div class="program">
       <h2>PROGRAM 2</h2>
-      <h3>Prim's algorithm</h3>
+      <h3>Prim's Algorithm</h3>
 
       <textarea id="code2">
 #include<stdio.h>
@@ -66,15 +78,15 @@ void main()
 }
       </textarea><br>
 
-      <button class="copy-btn" onclick="copyText('code2')">Copy text</button>
+      <button class="copy-btn" onclick="copyText('code2', this)">Copy</button>
     </div>
 
     <hr>
 
-    <!-- PROGRAM 3a -->
+    <!-- ================= PROGRAM 3a ================= -->
     <div class="program">
       <h2>PROGRAM 3a</h2>
-      <h3>Floyd's algorithm</h3>
+      <h3>Floyd's Algorithm</h3>
 
       <textarea id="code3">
 #include<stdio.h>
@@ -84,15 +96,15 @@ void floyd(int a[10][10],int n)
 }
       </textarea><br>
 
-      <button class="copy-btn" onclick="copyText('code3')">Copy text</button>
+      <button class="copy-btn" onclick="copyText('code3', this)">Copy</button>
     </div>
 
     <hr>
 
-    <!-- PROGRAM 3b -->
+    <!-- ================= PROGRAM 3b ================= -->
     <div class="program">
       <h2>PROGRAM 3b</h2>
-      <h3>Warshall's algorithm</h3>
+      <h3>Warshall's Algorithm</h3>
 
       <textarea id="code4">
 #include<stdio.h>
@@ -102,30 +114,25 @@ void path()
 }
       </textarea><br>
 
-      <button class="copy-btn" onclick="copyText('code4')">Copy text</button>
+      <button class="copy-btn" onclick="copyText('code4', this)">Copy</button>
     </div>
 
   </div>
+</main>
 
-  <script>
-    function copyText(id) {
-      const textarea = document.getElementById(id);
-      textarea.select();
-      textarea.setSelectionRange(0, 99999);
-      document.execCommand("copy");
-      alert("Code copied!");
-    }
-  </script>
+ <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
 
-<script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-  }
-</script>
+<!-- ===== FOOTER ===== -->
+<footer class="labs-footer">
+  &copy; 2025 RGITX. All rights reserved.
+</footer>
 
-  <footer class="labs-footer">
-    &copy; 2025 RGITX. All rights reserved.
-  </footer>
+<!-- ===== GLOBAL SCRIPT ===== -->
+<script src="script.js"></script>
 
 </body>
 </html>

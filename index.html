@@ -4,20 +4,32 @@
   <meta charset="UTF-8">
   <title>RGITX</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Global CSS -->
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
- 
-  <div id="header"></div>
-  <script>
-  fetch("header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    });
-</script>
+
+<!-- ===== HEADER (GLOBAL) ===== -->
+<header class="navbar">
+  <h1 class="logo">RGITX</h1>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="labs/weblab/weblab.html">WEB LAB</a>
+    <a href="ada.html">ADA</a>
+  </nav>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
 
 
+<!-- ===== PAGE CONTENT ===== -->
+<main class="page-content">
 
   <div class="container">
 
@@ -25,34 +37,36 @@
 
     <div class="cards">
 
-      
-
-      <a href=".\labs\Weblab\weblab.html" class="card">
+      <a href="labs/weblab/weblab.html" class="card">
         <div class="card-inner">WEB LAB</div>
       </a>
 
       <a href="ada.html" class="card">
         <div class="card-inner">Analysis and Design Algorithm</div>
       </a>
-      </a>
 
     </div>
 
   </div>
+  
+
+</main>
+
+ <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  &copy; 2025 RGITX. All rights reserved.
+</footer>
 
 
 
-<script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-  }
-</script>
-
-
-
-  <footer>
-    &copy; 2025 RGITX. All rights reserved.
-  </footer>
+<!-- ===== GLOBAL SCRIPT ===== -->
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -3,40 +3,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Web LAB </title>
+    <title>WEB LAB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../main.css">
 
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../main.css">
 </head>
 
 <body>
-   <div id="header"></div>
-  <script>
-  fetch("../../header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    });
-</script>
 
-    <div class="container">
+    <!-- ===== HEADER (GLOBAL) ===== -->
+   <header class="navbar">
+  <h1 class="logo">RGITX</h1>
 
-        <div class="header">
-            WEB LAB
-        </div>
-        <div class="date">on March 05, 2025</div>
+  <nav class="nav-links" id="navLinks">
+    <a href="../../index.html">Home</a>
+    <a href="weblab.html">WEB LAB</a>
+    <a href="ada.html">ADA</a>
+  </nav>
 
-        <!-- <div class="section-title">ALGORITHM</div> -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
 
-        <div class="red-bar"></div>
 
-        <!-- PROGRAM 1 -->
-        <div class="program">
-            <h2>PROGRAM 1</h2>
-            <h3>Introduction to Web</h3>
 
-            <textarea id="code1">
-                 
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="page-content">
+        <div class="lab-page">
+
+            <div class="header">WEB LAB</div>
+            <div class="date">on March 05, 2025</div>
+
+            <div class="red-bar"></div>
+
+            <!-- ================= PROGRAM 1 ================= -->
+            <div class="program">
+                <h2>PROGRAM 1</h2>
+                <h3>Introduction to Web</h3>
+
+                <textarea id="code1">
 <!DOCTYPE html> 
 <html lang="en"> 
 <head> 
@@ -73,28 +82,19 @@ Here are examples of logical styles: <b>Bold Text</b><br>
 Text with<sub>subscript</sub> and <sup>superscript</sup>  
 </body>
 </html>
-
- 
-
       </textarea><br>
 
-    
+                <button class="copy-btn" onclick="copyText('code1', this)">Copy</button>
+            </div>
 
-        <button 
-  class="copy-btn" 
-  onclick="copyText('code1', this)">
-  Copy
-</button>
-        
+            <hr>
 
-        <hr>
+            <!-- ================= PROGRAM 2 ================= -->
+            <div class="program">
+                <h2>PROGRAM 2</h2>
+                <h3>Time Table</h3>
 
-        <!-- PROGRAM 2 -->
-        <div class="program">
-            <h2>PROGRAM 2</h2>
-            <h3>Time Table</h3>
-
-            <textarea id="code2">
+                <textarea id="code2">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,24 +155,20 @@ Text with<sub>subscript</sub> and <sup>superscript</sup>
 </table>
 </body>
 </html>
+
       </textarea><br>
 
-                <button 
-  class="copy-btn" 
-  onclick="copyText('code2', this)">
-  Copy
-</button>
-   
+                <button class="copy-btn" onclick="copyText('code2', this)">Copy</button>
+            </div>
 
-        <hr>
-        <!-- PROGRAM 3 -->
-        <div class="program">
-            <h2>PROGRAM 3</h2>
-            <h3>different style for tags</h3>
+            <hr>
 
-            <textarea id="code3">
-                
- 
+            <!-- ================= PROGRAM 3 ================= -->
+            <div class="program">
+                <h2>PROGRAM 3</h2>
+                <h3>Different styles for tags</h3>
+
+                <textarea id="code3">
 <!DOCTYPE html> 
 <html lang="en"> 
 <head> 
@@ -254,62 +250,51 @@ src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https:// 
 1bd2dc900ebca36c43c9c/GettyImages1255905237.jpg?w=1500&h=680&q=60&fit=fill&f=f aces&fm=jpg&fl=progre ssive&auto=format%2Ccompress&dpr=1&w=1000" alt="A placeholder image"> 
 <p>Check out this <a href="https://searchcreators.org/">link</a> to see different link states.</p> 
 </main> </body> 
-</html>  
+</html>
+      </textarea><br>
 
-                
-                
+                <button class="copy-btn" onclick="copyText('code3', this)">Copy</button>
+            </div>
+
+            <hr>
+            <!-- PROGRAM 4 -->
+            <div class="program">
+                <h2>PROGRAM 4</h2>
+                <h3>registration form</h3>
+
+                <textarea id="code4">
+
+
             </textarea><br>
 
-                  <button 
-  class="copy-btn" 
-  onclick="copyText('code3', this)">
-  Copy
-</button>
-   
+                <button class="copy-btn" onclick="copyText('code4', this)">
+                    Copy
+                </button>
 
 
-        <hr>
-        <!-- PROGRAM 4 -->
-        <div class="program">
-            <h2>PROGRAM 4</h2>
-            <h3>registration form</h3>
+                <hr>
 
-            <textarea id="code4">
-                
-                
-            </textarea><br>
+                <!-- PROGRAM 5 -->
+                <div class="program">
+                    <h2>PROGRAM 5</h2>
+                    <h3>newspaper</h3>
 
-                  <button 
-  class="copy-btn" 
-  onclick="copyText('code4', this)">
-  Copy
-</button>
-   
+                    <textarea id="code5"></textarea><br>
 
-        <hr>
+                    <button class="copy-btn" onclick="copyText('code5', this)">
+                        Copy
+                    </button>
 
-        <!-- PROGRAM 5 -->
-        <div class="program">
-            <h2>PROGRAM 5</h2>
-            <h3>newspaper</h3>
 
-            <textarea id="code5"></textarea><br>
+                    <hr>
 
-                 <button 
-  class="copy-btn" 
-  onclick="copyText('code5', this)">
-  Copy
-</button>
-   
 
-        <hr>
+                    <!-- ================= PROGRAM 6 ================= -->
+                    <div class="program">
+                        <h2>PROGRAM 6</h2>
+                        <h3>Calculator</h3>
 
-        <!-- PROGRAM 6 -->
-        <div class="program">
-            <h2>PROGRAM 6</h2>
-            <h3>Calculater</h3>
-
-            <textarea id="code6">
+                        <textarea id="code6">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -358,54 +343,45 @@ src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https:// 
 </html>
       </textarea><br>
 
-                  <button 
-  class="copy-btn" 
-  onclick="copyText('code6', this)">
-  Copy
-</button>
-   
+                        <button class="copy-btn" onclick="copyText('code6', this)">Copy</button>
+                    </div>
 
-        <hr>
-<!-- PROGRAM 7 -->
-<div class="program">
-  <h2>PROGRAM 7</h2>
-  <h3>Convert JSON</h3>
+                    <hr>
 
-  <textarea id="code7" readonly></textarea><br>
+                    <!-- ================= PROGRAM 7 ================= -->
+                    <div class="program">
+                        <h2>PROGRAM 7</h2>
+                        <h3>Convert JSON</h3>
 
-        <button 
-  class="copy-btn" 
-  onclick="copyText('code7', this)">
-  Copy
-</button>
-   
+                        <textarea id="code7" readonly></textarea><br>
 
-<hr>
-        <!-- PROGRAM 8 -->
-        <div class="program">
-            <h2>PROGRAM 8</h2>
-            <h3>PHP</h3>
+                        <button class="copy-btn" onclick="copyText('code7', this)">Copy</button>
+                    </div>
 
-            <textarea id="code8">
-                
+                    <hr>
+                    <!-- PROGRAM 8 -->
+                    <div class="program">
+                        <h2>PROGRAM 8</h2>
+                        <h3>PHP</h3>
+
+                        <textarea id="code8">
+
             </textarea><br>
 
-                  <button 
-  class="copy-btn" 
-  onclick="copyText('code8', this)">
-  Copy
-</button>
-   
+                        <button class="copy-btn" onclick="copyText('code8', this)">
+                            Copy
+                        </button>
 
-        <hr>
 
-        <!-- PROGRAM 9 -->
-        <div class="program">
-            <h2>PROGRAM 9</h2>
-            <h3>jQuery</h3>
+                        <hr>
 
-            <textarea id="code9">
-                <!DOCTYPE html>
+                        <!-- ================= PROGRAM 9 ================= -->
+                        <div class="program">
+                            <h2>PROGRAM 9</h2>
+                            <h3>jQuery</h3>
+
+                            <textarea id="code9">
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -437,46 +413,41 @@ src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https:// 
 </div>
 
 <script>
-$(function(){
-  // a. Append content
-  $("#appendBtn").click(()=> {
-    $("#para").append("Appended text.");
-    $("#list").append("<li>Appended item</li>");
-  });
+    $(function () {
+        // a. Append content
+        $("#appendBtn").click(() => {
+            $("#para").append("Appended text.");
+            $("#list").append("<li>Appended item</li>");
+        });
 
-  // b. Animate element
-  $("#animateBtn").click(()=> $("#box1").animate({width:200, height:200, opacity:.5},1000));
+        // b. Animate element
+        $("#animateBtn").click(() => $("#box1").animate({ width: 200, height: 200, opacity: .5 }, 1000));
 
-  // c. Animate + color change
-  $("#colorBtn").click(()=> {
-    $("#box2").animate({width:200, height:200}, {
-      duration:1000,
-      step:(now,fx)=> fx.prop==="width" && $(fx.elem).css("background",`rgb(${Math.round(now)},52,219)`)
-    });
-  });
-}); 
+        // c. Animate + color change
+        $("#colorBtn").click(() => {
+            $("#box2").animate({ width: 200, height: 200 }, {
+                duration: 1000,
+                step: (now, fx) => fx.prop === "width" && $(fx.elem).css("background", `rgb(${Math.round(now)},52,219)`)
+            });
+        });
+    }); 
 </script>
 </body>
 </html>
-                
-            </textarea><br>
+      </textarea><br>
 
-                  <button 
-  class="copy-btn" 
-  onclick="copyText('code9', this)">
-  Copy
-</button>
-   
+                            <button class="copy-btn" onclick="copyText('code9', this)">Copy</button>
+                        </div>
 
-        <hr>
-        
-  <!-- PROGRAM 10 -->
-        <div class="program">
-            <h2>PROGRAM 10</h2>
-            <h3>Ajax Demo</h3>
+                        <hr>
 
-            <textarea id="code10">
-                <!DOCTYPE html>
+                        <!-- ================= PROGRAM 10 ================= -->
+                        <div class="program">
+                            <h2>PROGRAM 10</h2>
+                            <h3>Ajax Demo</h3>
+
+                            <textarea id="code10">
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -498,46 +469,39 @@ $(function(){
   <button onclick="parseJQ()">parseJSON()</button><pre id="d"></pre>
 </div>
 <script>
-const data={text:"This is a sample text from a simulated server response.",json:{name:"John Doe",age:30,city:"New York"}};
+    const data = { text: "This is a sample text from a simulated server response.", json: { name: "John Doe", age: 30, city: "New York" } };
 
-function noJQ(){setTimeout(()=>document.getElementById("a").textContent=data.text,500);}
-function withJQ(){$.ajax({success:r=>$("#b").text(data.text)});}
-function getJQ(){$.getJSON("",()=>$("#c").text(JSON.stringify(data.json,null,2)));}
-function parseJQ(){let obj=$.parseJSON(JSON.stringify(data.json));$("#d").text(JSON.stringify(obj,null,2));}
+    function noJQ() { setTimeout(() => document.getElementById("a").textContent = data.text, 500); }
+    function withJQ() { $.ajax({ success: r => $("#b").text(data.text) }); }
+    function getJQ() { $.getJSON("", () => $("#c").text(JSON.stringify(data.json, null, 2))); }
+    function parseJQ() { let obj = $.parseJSON(JSON.stringify(data.json)); $("#d").text(JSON.stringify(obj, null, 2)); }
 </script>
 </body>
 </html>
-            </textarea><br>
-            
+      </textarea><br>
 
-                  <button 
-  class="copy-btn" 
-  onclick="copyText('code10', this)">
-  Copy
-</button>
-   
+                            <button class="copy-btn" onclick="copyText('code10', this)">Copy</button>
+                        </div>
 
-          
+                    </div>
+    </main>
 
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+    </div>
+    </div>
 
-
-
-        <script src="script.js"></script>
-        <script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-  }
-</script>
-
-
-        <!-- <div class="red-bar"></div> -->
-        
-        <footer class="labs-footer">
-            &copy; 2025 RGITX. All rights reserved.
-        </footer>
+    <!-- ===== FOOTER ===== -->
+    <footer class="labs-footer">
+        © 2025 RGITX. All rights reserved.
+    </footer>
 
 
-        
+    <!-- ===== GLOBAL SCRIPT ===== -->
+    <script src="../../script.js"></script>
 
 </body>
 

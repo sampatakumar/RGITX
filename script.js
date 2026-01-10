@@ -107,3 +107,5 @@ function makeHash(){
 </body>
 </html>
 `;
+
+    // end pro7
