@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Analysis and Design Algorithm</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Analysis and Design Algorithm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="container">
+    <div class="container">
 
-    <div class="header">
-      WEB LAB
-    </div>
-    <div class="date">on March 05, 2025</div>
+        <div class="header">
+            WEB LAB
+        </div>
+        <div class="date">on March 05, 2025</div>
 
-    <!-- <div class="section-title">ALGORITHM</div> -->
+        <!-- <div class="section-title">ALGORITHM</div> -->
 
-    <div class="red-bar"></div>
+        <div class="red-bar"></div>
 
-    <!-- PROGRAM 1 -->
-    <div class="program">
-      <h2>PROGRAM 1</h2>
-      <h3>Kruskal's algorithm</h3>
+        <!-- PROGRAM 1 -->
+        <div class="program">
+            <h2>PROGRAM 1</h2>
+            <h3>Kruskal's algorithm</h3>
 
-      <textarea id="code1">
+            <textarea id="code1">
 #include<stdio.h>
 int ne=1,min_cost=0;
 void main()
@@ -35,17 +37,17 @@ void main()
 }
       </textarea><br>
 
-      <button class="copy-btn" onclick="copyText('code1')">Copy text</button>
-    </div>
+            <button class="copy-btn" onclick="copyText('code1')">Copy text</button>
+        </div>
 
-    <hr>
+        <hr>
 
-    <!-- PROGRAM 2 -->
-    <div class="program">
-      <h2>PROGRAM 2</h2>
-      <h3>Time Table</h3>
+        <!-- PROGRAM 2 -->
+        <div class="program">
+            <h2>PROGRAM 2</h2>
+            <h3>Time Table</h3>
 
-      <textarea id="code2">
+            <textarea id="code2">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,17 +110,17 @@ void main()
 </html>
       </textarea><br>
 
-      <button class="copy-btn" onclick="copyText('code2')">Copy text</button>
-    </div>
+            <button class="copy-btn" onclick="copyText('code2')">Copy text</button>
+        </div>
 
-    <hr>
+        <hr>
 
-    <!-- PROGRAM 3a -->
-    <div class="program">
-      <h2>PROGRAM 6</h2>
-      <h3>Calculater</h3>
+        <!-- PROGRAM 3a -->
+        <div class="program">
+            <h2>PROGRAM 6</h2>
+            <h3>Calculater</h3>
 
-      <textarea id="code3">
+            <textarea id="code3">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,27 +151,121 @@ void main()
   </div>
 </div>
 <script>
-  let disp=document.getElementById('display'), cur='', prev='', op='';
-  const add=v=>{cur+=v; disp.value=cur;}
-  const clr=()=>{cur=prev=op=''; disp.value='';}
-  const setOp=o=>{if(cur){if(prev) calc(); op=o; prev=cur; cur='';}}
-  const calc=()=>{if(prev&&cur){let r; const a=+prev,b=+cur;
-    r=op=='+'?a+b:op=='-'?a-b:op=='*'?a*b:op=='/'?a/b:op=='%'?a%b:Math.pow(a,b);
-    disp.value=prev=r; cur=''; op='';}}
-  const sqrt=()=>{if(cur){cur=Math.sqrt(+cur); disp.value=cur;}}
-  const sq=()=>{if(cur){cur=Math.pow(+cur,2); disp.value=cur;}}
+    let disp = document.getElementById('display'), cur = '', prev = '', op = '';
+    const add = v => { cur += v; disp.value = cur; }
+    const clr = () => { cur = prev = op = ''; disp.value = ''; }
+    const setOp = o => { if (cur) { if (prev) calc(); op = o; prev = cur; cur = ''; } }
+    const calc = () => {
+        if (prev && cur) {
+            let r; const a = +prev, b = +cur;
+            r = op == '+' ? a + b : op == '-' ? a - b : op == '*' ? a * b : op == '/' ? a / b : op == '%' ? a % b : Math.pow(a, b);
+            disp.value = prev = r; cur = ''; op = '';
+        }
+    }
+    const sqrt = () => { if (cur) { cur = Math.sqrt(+cur); disp.value = cur; } }
+    const sq = () => { if (cur) { cur = Math.pow(+cur, 2); disp.value = cur; } }
 </script>
 </body>
 </html>
       </textarea><br>
 
-      <button class="copy-btn" onclick="copyText('code3')">Copy text</button>
+            <button class="copy-btn" onclick="copyText('code3')">Copy text</button>
+        </div>
+
+        <hr>
+         <!-- PROGRAM 1 -->
+    <div class="program">
+      <h2>PROGRAM 7</h2>
+      <h3>convert Json</h3>
+
+      <textarea id="code7">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON/CSV Converter & Hash Generator</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<style>
+  body{font-family:Arial;margin:0;padding:20px;background:#f4f4f4;}
+  .container{max-width:800px;margin:auto;background:#fff;padding:20px;border-radius:5px;box-shadow:0 0 10px rgba(0,0,0,.1);}
+  h1{color:#333} textarea{width:100%;height:100px;margin:10px 0}
+  button{background:#4CAF50;color:#fff;padding:10px 15px;border:none;border-radius:4px;cursor:pointer;margin:5px 5px 5px 0}
+  button:hover{background:#45a049}
+  #result{margin-top:20px;padding:10px;background:#e7e7e7;border-radius:4px;white-space:pre-wrap}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>JSON/CSV Converter & Hash Generator</h1>
+
+  <h2>a) JSON → Object</h2>
+  <textarea id="jsonInput" placeholder="Enter JSON"></textarea>
+  <button onclick="toObj()">Convert</button>
+
+  <h2>b) JSON → Date</h2>
+  <textarea id="jsonDateInput" placeholder='{"date":"2023-05-15T12:00:00Z"}'></textarea>
+  <button onclick="toDate()">Convert</button>
+
+  <h2>c) JSON ↔ CSV</h2>
+  <textarea id="dataInput" placeholder="Enter JSON or CSV"></textarea>
+  <button onclick="toCsv()">JSON→CSV</button>
+  <button onclick="toJson()">CSV→JSON</button>
+
+  <h2>d) Hash String</h2>
+  <textarea id="hashInput" placeholder="Enter string"></textarea>
+  <button onclick="makeHash()">Generate</button>
+
+  <div id="result"></div>
+</div>
+
+<script>
+const out=t=>document.getElementById('result').innerText=t;
+
+function toObj(){
+  try{out("Object:\n"+JSON.stringify(JSON.parse(jsonInput.value),null,2))}
+  catch(e){out("Error: "+e.message)}
+}
+
+function toDate(){
+  try{out("Date: "+new Date(JSON.parse(jsonDateInput.value).date))}
+  catch(e){out("Error: "+e.message)}
+}
+
+function toCsv(){
+  try{
+    const arr=JSON.parse(dataInput.value),h=Object.keys(arr[0]);
+    const csv=[h.join(','),...arr.map(r=>h.map(f=>JSON.stringify(r[f])).join(','))].join('\n');
+    out("CSV:\n"+csv)
+  }catch(e){out("Error: "+e.message)}
+}
+
+function toJson(){
+  try{
+    const [h,...rows]=dataInput.value.split('\n'),keys=h.split(',');
+    const json=rows.map(r=>{const v=r.split(',');return keys.reduce((o,k,i)=>(o[k]=v[i],o),{})});
+    out("JSON:\n"+JSON.stringify(json,null,2))
+  }catch(e){out("Error: "+e.message)}
+}
+
+function makeHash(){
+  try{out("SHA-256:\n"+CryptoJS.SHA256(hashInput.value))}
+  catch(e){out("Error: "+e.message)}
+}
+</script>
+</body>
+</html>
+      </textarea><br>
+
+      <button class="copy-btn" onclick="copyText('code7')">Copy text</button>
     </div>
 
 
-    
 
-   <script src="script.js"></script>
+
+
+        <script src="script.js"></script>
 
 </body>
+
 </html>
