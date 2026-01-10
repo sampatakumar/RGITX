@@ -24,17 +24,10 @@
         <!-- PROGRAM 1 -->
         <div class="program">
             <h2>PROGRAM 1</h2>
-            <h3>Kruskal's algorithm</h3>
+            <h3>Introduction to Web</h3>
 
             <textarea id="code1">
-#include<stdio.h>
-int ne=1,min_cost=0;
-void main()
-{
-  int n,i,j,min,a,b,u,v;
-  int cost[20][20],parent[20];
-  printf("Enter the no. of vertices:");
-}
+not pasted yet
       </textarea><br>
 
             <button class="copy-btn" onclick="copyText('code1')">Copy text</button>
@@ -115,7 +108,7 @@ void main()
 
         <hr>
 
-        <!-- PROGRAM 3a -->
+        <!-- PROGRAM 6 -->
         <div class="program">
             <h2>PROGRAM 6</h2>
             <h3>Calculater</h3>
@@ -183,55 +176,68 @@ void main()
   <button class="copy-btn" onclick="copyText('code7')">Copy text</button>
 </div>
 
+<hr>
+  <!-- PROGRAM 10 -->
+        <div class="program">
+            <h2>PROGRAM 10</h2>
+            <h3>Ajax Demo</h3>
+
+            <textarea id="code1">
+                <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax Demo</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+  body{font-family:Arial;padding:20px;background:#f4f4f4;}
+  .box{max-width:600px;margin:auto;background:#fff;padding:20px;border-radius:5px;box-shadow:0 0 10px #aaa;}
+  button{background:#4CAF50;color:#fff;border:0;padding:8px 12px;border-radius:4px;cursor:pointer;margin:5px;}
+  pre{background:#eee;padding:10px;border-radius:4px;}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>Ajax Demo</h1>
+  <button onclick="noJQ()">Without jQuery</button><pre id="a"></pre>
+  <button onclick="withJQ()">With jQuery</button><pre id="b"></pre>
+  <button onclick="getJQ()">getJSON()</button><pre id="c"></pre>
+  <button onclick="parseJQ()">parseJSON()</button><pre id="d"></pre>
+</div>
+<script>
+const data={text:"This is a sample text from a simulated server response.",json:{name:"John Doe",age:30,city:"New York"}};
+
+function noJQ(){setTimeout(()=>document.getElementById("a").textContent=data.text,500);}
+function withJQ(){$.ajax({success:r=>$("#b").text(data.text)});}
+function getJQ(){$.getJSON("",()=>$("#c").text(JSON.stringify(data.json,null,2)));}
+function parseJQ(){let obj=$.parseJSON(JSON.stringify(data.json));$("#d").text(JSON.stringify(obj,null,2));}
+</script>
+</body>
+</html>
+            </textarea><br>
+
+            <button class="copy-btn" onclick="copyText('code1')">Copy text</button>
+        </div>
+
+        <hr>
+
+          <!-- PROGRAM 1 -->
+        <div class="program">
+            <h2>PROGRAM 1</h2>
+            <h3>Kruskal's algorithm</h3>
+
+            <textarea id="code1"></textarea><br>
+
+            <button class="copy-btn" onclick="copyText('code1')">Copy text</button>
+        </div>
+
 
 
 
         <script src="script.js"></script>
 
 
-        <script>
-document.getElementById("code7").value = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JSON/CSV Converter & Hash Generator</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"><\/script>
-
-<style>
-body{font-family:Arial;margin:0;padding:20px;background:#f4f4f4;}
-.container{max-width:800px;margin:auto;background:#fff;padding:20px;
-border-radius:5px;box-shadow:0 0 10px rgba(0,0,0,.1);}
-textarea{width:100%;height:100px;margin:10px 0}
-button{background:#4CAF50;color:#fff;padding:10px 15px;border:none;
-border-radius:4px;cursor:pointer}
-#result{margin-top:20px;padding:10px;background:#e7e7e7;
-border-radius:4px;white-space:pre-wrap}
-</style>
-</head>
-
-<body>
-<div class="container">
-<h1>JSON/CSV Converter & Hash Generator</h1>
-
-<h2>a) JSON → Object</h2>
-<textarea></textarea>
-
-<h2>b) JSON → Date</h2>
-<textarea></textarea>
-
-<h2>c) JSON ↔ CSV</h2>
-<textarea></textarea>
-
-<h2>d) Hash String</h2>
-<textarea></textarea>
-</div>
-</body>
-</html>
-`;
-</script>
-
+        
 
 </body>
 
