@@ -3,7 +3,6 @@ function copyText(id) {
       textarea.select();
       textarea.setSelectionRange(0, 99999);
       document.execCommand("copy");
-      alert("Code copied!");
     }
 
 
