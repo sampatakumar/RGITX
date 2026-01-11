@@ -463,19 +463,21 @@ src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https:// 
   </div>
 </div>
 <script>
-    let disp = document.getElementById('display'), cur = '', prev = '', op = '';
-    const add = v => { cur += v; disp.value = cur; }
-    const clr = () => { cur = prev = op = ''; disp.value = ''; }
-    const setOp = o => { if (cur) { if (prev) calc(); op = o; prev = cur; cur = ''; } }
-    const calc = () => {
-        if (prev && cur) {
-            let r; const a = +prev, b = +cur;
-            r = op == '+' ? a + b : op == '-' ? a - b : op == '*' ? a * b : op == '/' ? a / b : op == '%' ? a % b : Math.pow(a, b);
-            disp.value = prev = r; cur = ''; op = '';
-        }
-    }
-    const sqrt = () => { if (cur) { cur = Math.sqrt(+cur); disp.value = cur; } }
-    const sq = () => { if (cur) { cur = Math.pow(+cur, 2); disp.value = cur; } }
+  const disp = document.getElementById('display');
+  let cur = '';
+
+  const add = v => disp.value = cur += v;
+
+  const setOp = o =>
+    cur && !/[+\-*/%^]$/.test(cur) && (disp.value = cur += o);
+
+  const calc = () =>
+    disp.value = cur = eval(cur.replace(/×/g,'*').replace(/÷/g,'/').replace(/\^/g,'**'));
+
+  const clr = () => disp.value = cur = '';
+
+  const sqrt = () => disp.value = cur = Math.sqrt(eval(cur));
+  const sq   = () => disp.value = cur = Math.pow(eval(cur), 2);
 </script>
 </body>
 </html>
