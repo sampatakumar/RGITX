@@ -11,6 +11,14 @@ body {
   color: white;
   padding: 25px;
 }
+textarea {
+  overflow-y: scroll;
+  scrollbar-width: none;     /* Firefox */
+}
+
+textarea::-webkit-scrollbar {
+  display: none;             /* Chrome, Edge, Safari */
+}
 
 /* ========== NAVBAR ========== */
 .navbar {
