@@ -58,25 +58,35 @@
         }
     </script>
 <script>
+let warned = false;
+
+// Disable right-click
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
-  console.log("This is for cheat in your exam");
+
+  if (!warned) {
+    alert("This is for cheat in your exam");
+    warned = true;
+  }
 });
-</script>
 
-
-  <script>
+// Disable DevTools keys
 document.addEventListener("keydown", function (e) {
   if (
     e.key === "F12" ||
-    (e.ctrlKey && e.shiftKey && ["I", "J","U"].includes(e.key)) ||
+    (e.ctrlKey && e.shiftKey && ["I", "J", "U"].includes(e.key)) ||
     (e.ctrlKey && e.key === "U")
   ) {
     e.preventDefault();
-    alert("This is for cheat in ur exam");
+
+    if (!warned) {
+      alert("This is for cheat in your exam");
+      warned = true;
+    }
   }
 });
 </script>
+
 
 
 
