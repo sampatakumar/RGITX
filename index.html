@@ -60,29 +60,28 @@
 <script>
 let warned = false;
 
-// Disable right-click
-document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
-
+function showWarning() {
   if (!warned) {
     alert("This is for cheat in your exam");
     warned = true;
   }
+}
+
+// Disable right-click
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+  showWarning();
 });
 
-// Disable DevTools keys
+// Disable DevTools & View Source keys
 document.addEventListener("keydown", function (e) {
   if (
     e.key === "F12" ||
-    (e.ctrlKey && e.shiftKey && ["I", "J", "U"].includes(e.key)) ||
-    (e.ctrlKey && e.key === "U")
+    (e.ctrlKey && e.key.toLowerCase() === "u") || // Ctrl + U
+    (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(e.key.toLowerCase()))
   ) {
     e.preventDefault();
-
-    if (!warned) {
-      alert("This is for cheat in your exam");
-      warned = true;
-    }
+    showWarning();
   }
 });
 </script>
