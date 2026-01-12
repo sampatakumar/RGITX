@@ -15,6 +15,46 @@ function copyText(id, btn) {
 }
 
 
+
+let warned = false;
+
+function showBanner() {
+  if (warned) return;
+  warned = true;
+
+  const banner = document.getElementById("warningBanner");
+  banner.classList.add("show");
+
+  setTimeout(() => {
+    banner.classList.remove("show");
+  }, 3000);
+}
+
+// Disable right-click
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+  showBanner();
+}, true);
+
+// Disable DevTools & View Source
+document.addEventListener("keydown", function (e) {
+  const key = e.key.toLowerCase();
+
+  if (
+    e.keyCode === 123 ||                 // F12
+    (e.ctrlKey && key === "u") ||         // Ctrl + U
+    (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(key))
+  ) {
+    e.preventDefault();
+    e.stopPropagation();
+    showBanner();
+    return false;
+  }
+}, true);
+
+
+
+
     // pro7
 
     // PROGRAM 7 SCRIPT (DISPLAY ONLY — FULL CODE)
