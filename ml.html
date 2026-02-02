@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ML LAB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://www.comedk.org/uploads/rgit-logo.png"
+      type="image/x-icon"
+    />
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="RGITX/main.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER (GLOBAL) ===== -->
+    <header class="navbar">
+      <h1 class="logo">RGITX</h1>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="RGITX/index.html">Home</a>
+        <a href="RGITX/weblab.html">WEB LAB</a>
+        <a href="RGITX/ada.html">ADA</a>
+      </nav>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+    <div id="warningBanner">⚠️ This action is not allowed during the exam.</div>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="page-content">
+      <div class="lab-page">
+        <div class="header">ML LAB</div>
+        <div class="date">on March 05, 2025</div>
+
+        <div class="red-bar"></div>
+
+        <!-- ================= PROGRAM 1 ================= -->
+        <div class="program">
+          <h2>PROGRAM 1</h2>
+          <h3>California Housing Analysis</h3>
+
+          <textarea id="code1">
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.datasets import fetch_california_housing
+# Load the California Housing dataset
+def load_data():
+ data = fetch_california_housing(as_frame=True)
+ df = data['data']
+ df['Target'] = data['target'] # Add the target (house value) to the DataFrame
+ return df
+# Function to plot histograms for numerical features
+def plot_histograms(df):
+	numerical_features = df.select_dtypes(include='number').columns
+	df[numerical_features].hist(bins=20, figsize=(15, 10), color='skyblue', edgecolor='black')
+	plt.suptitle('Histograms of Numerical Features', fontsize=16)
+	plt.tight_layout()
+	plt.show()
+# Function to generate box plots and identify outliers
+def plot_boxplots(df):
+	numerical_features = df.select_dtypes(include='number').columns
+	for feature in numerical_features:
+		plt.figure(figsize=(8, 6))
+		sns.boxplot(x=df[feature], color='lightblue')
+		plt.title(f'Box Plot of {feature}', fontsize=14)
+		plt.xlabel(feature, fontsize=12)
+		plt.tight_layout()
+		plt.show()
+		# Identify outliers using the IQR method
+		Q1 = df[feature].quantile(0.25)
+		Q3 = df[feature].quantile(0.75)
+		IQR = Q3 - Q1
+		lower_bound = Q1 - 1.5 * IQR
+		upper_bound = Q3 + 1.5 * IQR
+		outliers = df[(df[feature] < lower_bound) | (df[feature] > upper_bound)]
+		print(f"{feature}: {len(outliers)} outliers found.")
+# Main function to run the analysis
+def main():
+	df = load_data()
+	print("Dataset loaded successfully!")
+	print("\nGenerating histograms for numerical features...")
+	plot_histograms(df)
+	print("\nGenerating box plots and identifying outliers...")
+	plot_boxplots(df)
+if __name__ == "__main__":
+ main()
+</textarea
+          ><br />
+
+          <button class="copy-btn" onclick="copyText('code1', this)">
+            Copy
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="labs-footer">© 2025 RGITX. All rights reserved.</footer>
+
+    <!-- ===== GLOBAL SCRIPT ===== -->
+    <script src="RGITX/script.js"></script>
+    <script>
+      function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
