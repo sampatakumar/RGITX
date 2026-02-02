@@ -1,115 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>RGITX</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://www.comedk.org/uploads/rgit-logo.png" type="image/x-icon">
-  <!-- Global CSS -->
-  <link rel="stylesheet" href="main.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>RGITX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://www.comedk.org/uploads/rgit-logo.png"
+      type="image/x-icon"
+    />
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER (GLOBAL) ===== -->
+    <header class="navbar">
+      <h1 class="logo">RGITX</h1>
 
-<!-- ===== HEADER (GLOBAL) ===== -->
-<header class="navbar">
-  <h1 class="logo">RGITX</h1>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="weblab.html">WEB LAB</a>
+        <a href="ada.html">ADA</a>
+      </nav>
 
-  <nav class="nav-links" id="navLinks">
-    <a href="index.html">Home</a>
-    <a href="weblab.html">WEB LAB</a>
-    <a href="ada.html">ADA</a>
-  </nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    <div id="warningBanner">⚠️ This action is not allowed during the exam.</div>
 
-  <div class="hamburger" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</header>
- <div id="warningBanner">
-  ⚠️ This action is not allowed during the exam.
-</div>
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="page-content">
+      <div class="container">
+        <div class="featured-title">Featured Post</div>
 
-<!-- ===== PAGE CONTENT ===== -->
-<main class="page-content">
+        <div class="cards">
+          <a href="weblab.html" class="card">
+            <div class="card-inner">WEB LAB</div>
+          </a>
 
-  <div class="container">
+          <a href="ada.html" class="card">
+            <div class="card-inner">Analysis and Design Algorithm</div>
+          </a>
 
-    <div class="featured-title">Featured Post</div>
+          <a href="ml.html" class="card">
+            <div class="card-inner">Machine Learning</div>
+          </a>
+        </div>
+      </div>
+    </main>
 
-    <div class="cards">
-
-      <a href="weblab.html" class="card">
-        <div class="card-inner">WEB LAB</div>
-      </a>
-
-      <a href="ada.html" class="card">
-        <div class="card-inner">Analysis and Design Algorithm</div>
-      </a>
-
-    </div>
-
-  </div>
-  
-
-</main>
-
- <script>
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
-        }
+    <script>
+      function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("active");
+      }
     </script>
-<script>
-let warned = false;
+    <script>
+      let warned = false;
 
-function showBanner() {
-  if (warned) return;
-  warned = true;
+      function showBanner() {
+        if (warned) return;
+        warned = true;
 
-  const banner = document.getElementById("warningBanner");
-  banner.classList.add("show");
+        const banner = document.getElementById("warningBanner");
+        banner.classList.add("show");
 
-  setTimeout(() => {
-    banner.classList.remove("show");
-  }, 3000);
-}
+        setTimeout(() => {
+          banner.classList.remove("show");
+        }, 3000);
+      }
 
-// Disable right-click
-document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
-  showBanner();
-}, true);
+      // Disable right-click
+      document.addEventListener(
+        "contextmenu",
+        function (e) {
+          e.preventDefault();
+          showBanner();
+        },
+        true,
+      );
 
-// Disable DevTools & View Source
-document.addEventListener("keydown", function (e) {
-  const key = e.key.toLowerCase();
+      // Disable DevTools & View Source
+      document.addEventListener(
+        "keydown",
+        function (e) {
+          const key = e.key.toLowerCase();
 
-  if (
-    e.keyCode === 123 ||                 // F12
-    (e.ctrlKey && key === "u") ||         // Ctrl + U
-    (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(key))
-  ) {
-    e.preventDefault();
-    e.stopPropagation();
-    showBanner();
-    return false;
-  }
-}, true);
-</script>
+          if (
+            e.keyCode === 123 || // F12
+            (e.ctrlKey && key === "u") || // Ctrl + U
+            (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(key))
+          ) {
+            e.preventDefault();
+            e.stopPropagation();
+            showBanner();
+            return false;
+          }
+        },
+        true,
+      );
+    </script>
 
+    <!-- ===== FOOTER ===== -->
+    <footer>&copy; 2025 RGITX. All rights reserved.</footer>
 
-
-
-
-<!-- ===== FOOTER ===== -->
-<footer>
-  &copy; 2025 RGITX. All rights reserved.
-</footer>
-
-
-
-<!-- ===== GLOBAL SCRIPT ===== -->
-<script src="script.js"></script>
-
-</body>
+    <!-- ===== GLOBAL SCRIPT ===== -->
+    <script src="script.js"></script>
+  </body>
 </html>
